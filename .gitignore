@@ -141,3 +141,16 @@ dist
 
 # IntelliJ
 .idea/
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/community-plugins.json
+.obsidian/core-plugins.json
+.obsidian/workspace.json
+.obsidian/plugins/code-styler/main.js
+.obsidian/plugins/code-styler/manifest.json
+.obsidian/plugins/code-styler/styles.css
+.obsidian/plugins/code-styler/reference-files/cache.json
+.obsidian/plugins/obsidian-reveal-active-file/main.js
+.obsidian/plugins/obsidian-reveal-active-file/manifest.json
+.obsidian/themes/Obsidian gruvbox/manifest.json
+.obsidian/themes/Obsidian gruvbox/theme.css
