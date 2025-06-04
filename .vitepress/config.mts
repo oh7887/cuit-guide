@@ -58,6 +58,7 @@ export default defineConfig({
     nav: [
       { text: "主页", link: "/" },
       { text: "实验室列表", link: "/lab-list" },
+      { text: "校友友链", link: "/friends-list.md" },
       // { text: 'Examples', link: '/markdown-examples' }
     ],
 
