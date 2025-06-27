@@ -151,7 +151,7 @@ function copyToClipboard(text) {
 // 初始加载
 const loadFriends = async () => {
     try {
-        const friendModules = import.meta.glob('../../../src/data/friends/*.json');
+        const friendModules = import.meta.glob('@data/friends/*.json');
         const friendData: Friend[] = [];
         for (const path in friendModules) {
             const module = await friendModules[path]();

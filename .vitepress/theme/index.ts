@@ -2,6 +2,7 @@
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { h } from "vue";
+// @ts-ignore
 import { createPinia } from 'pinia'; // 新增
 
 import LabList from "./components/LabList.vue";

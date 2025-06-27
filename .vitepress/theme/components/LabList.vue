@@ -232,7 +232,7 @@ const labs = ref([
 ]);
 const loadLabs = async () => {
   try {
-    const labModules = import.meta.glob('../../../src/data/labs/*.json');
+    const labModules = import.meta.glob('@data/labs/*.json');
     const labData = [];
     for (const path in labModules) {
       const module = await labModules[path]();
