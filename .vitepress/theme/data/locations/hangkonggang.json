@@ -1,0 +1,166 @@
+{
+  "campus": "hangkonggang",
+  "campusName": "航空港校区",
+  "center": {
+    "latitude": 30.581158,
+    "longitude": 103.988272
+  },
+  "locations": [
+    {
+      "name": "第一教学楼",
+      "type": "教学楼",
+      "location": "校区中心区域",
+      "description": "航空港校区主要教学楼，承担大部分本科课程教学。",
+      "facilities": ["多媒体教室", "实验室", "自习室", "打印室"],
+      "openTime": "6:00-22:00",
+      "contact": "028-12345678",
+      "coordinates": {
+        "latitude": 30.579939,
+        "longitude": 103.988705
+      }
+    },
+    {
+      "name": "一食堂",
+      "type": "食堂",
+      "location": "学生生活区",
+      "description": "航空港校区主要食堂之一，提供丰富的餐饮选择。",
+      "facilities": ["中式快餐", "西餐厅", "粤菜馆", "小吃街"],
+      "openTime": "6:30-21:30",
+      "contact": "028-87654321",
+      "coordinates": {
+        "latitude": 30.579121,
+        "longitude": 103.985033
+      }
+    },
+    {
+      "name": "二食堂",
+      "type": "食堂",
+      "location": "学生生活区",
+      "description": "航空港校区第二食堂，提供多样化的餐饮服务和舒适的用餐环境。",
+      "facilities": ["特色小吃", "地方菜系", "清真餐厅", "饮品店"],
+      "openTime": "6:30-21:30",
+      "contact": "028-87654322",
+      "coordinates": {
+        "latitude": 30.581517,
+        "longitude": 103.984379
+      }
+    },
+    {
+      "name": "图书馆",
+      "type": "图书馆",
+      "location": "校园东侧",
+      "description": "现代化图书馆，提供安静的学习环境和丰富的电子资源。",
+      "facilities": ["阅览室", "自习室", "电子阅览室", "讨论室"],
+      "openTime": "7:00-23:00",
+      "contact": "028-11223344",
+      "coordinates": {
+        "latitude": 30.581486,
+        "longitude": 103.989234
+      }
+    },
+    {
+      "name": "学生宿舍1号楼",
+      "type": "宿舍楼",
+      "location": "生活区北侧",
+      "description": "标准四人间宿舍，配备空调、热水器等基础设施。",
+      "facilities": ["空调", "热水器", "阳台", "网络"],
+      "openTime": "24小时",
+      "contact": "028-99887766",
+      "coordinates": {
+        "latitude": 30.578957,
+        "longitude": 103.985731
+      }
+    },
+    {
+      "name": "体育馆",
+      "type": "体育设施",
+      "location": "校园西南角",
+      "description": "综合性体育场馆，可进行篮球、羽毛球、乒乓球等多种运动。",
+      "facilities": ["篮球场", "羽毛球场", "乒乓球台", "健身房"],
+      "openTime": "6:00-22:00",
+      "contact": "028-55443322",
+      "coordinates": {
+        "latitude": 30.583472,
+        "longitude": 103.988726
+      }
+    },
+    {
+      "name": "行政楼",
+      "type": "行政楼",
+      "location": "校区正门内侧",
+      "description": "学校行政办公区域，包含各种行政服务窗口。",
+      "facilities": ["教务处", "学生处", "财务处", "招生办"],
+      "openTime": "8:00-17:30",
+      "contact": "028-85966857",
+      "coordinates": {
+        "latitude": 30.580577,
+        "longitude": 103.991604
+      }
+    },
+    {
+      "name": "校医院",
+      "type": "医疗服务",
+      "location": "生活区",
+      "description": "为师生提供专业医疗服务和健康保障。",
+      "facilities": ["门诊部", "药房", "急救中心", "体检中心", "预防保健"],
+      "openTime": "8:00-17:00",
+      "contact": "028-85966120",
+      "coordinates": {
+        "latitude": 30.581821,
+        "longitude": 103.98377
+      }
+    },
+    {
+      "name": "志学楼",
+      "type": "教学楼",
+      "location": "教学区",
+      "description": "专业课程教学楼，设有多个专业教室和实验室。",
+      "facilities": ["专业教室", "实验室", "多媒体设备", "自习区"],
+      "openTime": "6:00-22:00",
+      "contact": "028-85966234",
+      "coordinates": {
+        "latitude": 30.580192,
+        "longitude": 103.990309
+      }
+    },
+    {
+      "name": "学术报告厅",
+      "type": "会议设施",
+      "location": "学术交流区",
+      "description": "承办各类学术讲座、报告会和大型会议的专业场所。",
+      "facilities": ["大型报告厅", "音响设备"],
+      "openTime": "8:00-21:00",
+      "contact": "028-85966345",
+      "coordinates": {
+        "latitude": 30.581963,
+        "longitude": 103.989557
+      }
+    },
+    {
+      "name": "国际会议厅",
+      "type": "会议设施",
+      "location": "国际交流中心",
+      "description": "高标准国际会议场所，配备先进的会议设施和服务。",
+      "facilities": ["国际会议厅", "音响设备"],
+      "openTime": "8:00-21:00",
+      "contact": "028-85966456",
+      "coordinates": {
+        "latitude": 30.582087,
+        "longitude": 103.989432
+      }
+    },
+    {
+      "name": "双中心（信达楼）",
+      "type": "综合楼",
+      "location": "校区东侧",
+      "description": "集教学、科研、办公于一体的现代化综合建筑。",
+      "facilities": ["教学区", "科研实验室", "办公区", "会议室"],
+      "openTime": "6:00-22:00",
+      "contact": "028-85966567",
+      "coordinates": {
+        "latitude": 30.580708,
+        "longitude": 103.992671
+      }
+    }
+  ]
+}

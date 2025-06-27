@@ -45,9 +45,8 @@ onUnmounted(() => {
   </div>
 </template>
 <style lang="scss">
-#cont { 
-  width: 70vw;
-  height: 95vh;
+#cont {
+  height: 80vh;
 }
 #container {
   padding: 0px;
