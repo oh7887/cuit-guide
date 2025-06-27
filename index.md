@@ -5,27 +5,27 @@ layout: home
 hero:
   name: '成都信息工程大学 指南'
   # text: ""
-  tagline: CUIT GUIDE！
+  tagline: IT'S CUIT GUIDE!
   actions:
     - theme: brand
       text: 开始阅读
       link: /README
 
 features:
-  - title: 这里有什么？
-    details: 本文档可收录的内容可以涉及 CUIT 的方方面面，你可以 PR 任何你觉得有关 CUIT 的东西; 不是 CUIT 的也可，只要你觉得有益; 
-  - title: 性质声明
-    details: 本文档纯公益性质且开源，不用于商业用途; 
-  - title: 如何参与？
-    details: 有 git 以及 markdown 基础的同学可以直接参与 PR(Pull Request, 合并请求), 如不懂，请联系管理员; 
+  - title: 内容概览
+    details: 本指南涵盖 CUIT 校园生活的方方面面，欢迎提交任何有价值内容
+  - title: 关于项目
+    details: 这是一个开源的公益项目，致力于为 CUIT 同学提供全方位的校园指南
+  - title: 参与贡献
+    details: 熟悉 Git 和 Markdown 的同学可以直接提交 PR，如需帮助请联系管理员
     link: /README
-  - title: 学习技术/考研/实习/就业
-    details: 一切学习相关的，这里统统都有！
+  - title: 学习发展
+    details: 涵盖专业学习、考研深造、实习就业等全方位的学习资源和经验分享
     link: /学习相关/index
-  - title: 成信大所有组织，所有全收录！(若无，请添加或联系管理员)
-    details: 快来选择你最中意的！(再也不会找不到组织了)
+  - title: 校园组织
+    details: 收录校内所有学生组织信息，帮助你找到志同道合的伙伴
     link: /校级组织/index
-  - title: 资源收集，线上线下的各种学习/其他资源
-    details: 总有你需要的
+  - title: 资源汇总
+    details: 精心整理的学习资源，助力你的学习成长
     link: /资源/index
 ---
