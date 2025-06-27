@@ -154,3 +154,5 @@ dist
 .obsidian/plugins/obsidian-reveal-active-file/manifest.json
 .obsidian/themes/Obsidian gruvbox/manifest.json
 .obsidian/themes/Obsidian gruvbox/theme.css
+
+package-lock.json

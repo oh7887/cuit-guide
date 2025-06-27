@@ -95,7 +95,7 @@ export default defineConfig({
       // prefixSeparator: '.',
       // excludeFiles: ['first.md', 'secret.md'],
       // excludeFilesByFrontmatterFieldName: 'exclude',
-      // excludeFolders: ['secret-folder'],
+      excludeFolders: ['Excludes', 'vue-test'],
       // includeDotFiles: false,
       // includeRootIndexFile: false,
       // includeFolderIndexFile: false,
