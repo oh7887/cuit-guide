@@ -60,7 +60,7 @@ git clone 这里的链接：
 
 ## 联系我们：
 
-2025回声公众群：625653626
+2025 回声公众群：625653626
 guide 公众群：973721542
 
 ![Visitor Counter](https://count.getloli.com/get/@cuit-guide?theme=moebooru)

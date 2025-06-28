@@ -8,6 +8,8 @@ export default defineConfig({
   lang: "zh-CN",
   ignoreDeadLinks: true, // 防止因死链而失败
   lastUpdated: true,
+  // 排除这些文件夹不被 VitePress 构建处理
+  srcExclude: ['**/packages/**', '**/Excludes/**', '**/vue-test/**'],
   vite: {
       resolve: {
         alias: {
@@ -87,7 +89,6 @@ export default defineConfig({
       collapsed: true,
       collapseDepth: 2,
       useFolderLinkFromIndexFile: true,
-      //excludeFolders: ["vue-test"],
       // documentRootPath: '/src',
       // scanStartPath: null,
       // basePath: null,
@@ -115,7 +116,7 @@ export default defineConfig({
       // prefixSeparator: '.',
       // excludeFiles: ['first.md', 'secret.md'],
       // excludeFilesByFrontmatterFieldName: 'exclude',
-      excludeFolders: ['Excludes', 'vue-test'],
+      excludeFolders: ['Excludes', 'vue-test', 'packages'],
       // includeDotFiles: false,
       // includeRootIndexFile: false,
       // includeFolderIndexFile: false,

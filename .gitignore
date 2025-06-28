@@ -156,3 +156,4 @@ dist
 .obsidian/themes/Obsidian gruvbox/theme.css
 
 package-lock.json
+reference/*

@@ -41,7 +41,7 @@ const loadMap = async () => {
 
 // 设置坐标拾取功能
 const setupCoordinatePicker = (AMap) => {
-  // 为地图注册click事件获取鼠标点击出的经纬度坐标
+  // 为地图注册 click 事件获取鼠标点击出的经纬度坐标
   map.value.on('click', function(e) {
     // 获取点击位置的经纬度
     const lng = e.lnglat.getLng();
@@ -50,17 +50,17 @@ const setupCoordinatePicker = (AMap) => {
     if (isCoordinatePickerEnabled.value) {
       // 坐标拾取模式：输出详细信息
       console.log('🗺️ 坐标拾取模式');
-      console.log(`经度: ${lng}`);
-      console.log(`纬度: ${lat}`);
-      console.log(`坐标: [${lng}, ${lat}]`);
-      console.log(`GeoJSON格式: {"latitude": ${lat}, "longitude": ${lng}}`);
+      console.log(`经度：${lng}`);
+      console.log(`纬度：${lat}`);
+      console.log(`坐标：[${lng}, ${lat}]`);
+      console.log(`GeoJSON 格式：{"latitude": ${lat}, "longitude": ${lng}}`);
       console.log('-------------------');
       
       // 在地图上添加临时标记
       addTempMarker(AMap, lng, lat);
     } else {
       // 普通模式：简单输出
-      console.log(`点击坐标: [${lng}, ${lat}]`);
+      console.log(`点击坐标：[${lng}, ${lat}]`);
     }
   });
 };
@@ -104,12 +104,12 @@ const addTempMarker = (AMap, lng, lat) => {
     position: [lng, lat],
     content: tempMarkerContent,
     offset: new AMap.Pixel(-10, -10),
-    title: `坐标: [${lng}, ${lat}]`
+    title: `坐标：[${lng}, ${lat}]`
   });
   
   map.value.add(window.tempMarker);
   
-  // 5秒后自动移除临时标记
+  // 5 秒后自动移除临时标记
   setTimeout(() => {
     if (window.tempMarker) {
       map.value.remove(window.tempMarker);
@@ -121,10 +121,10 @@ const addTempMarker = (AMap, lng, lat) => {
 // 切换坐标拾取模式
 const toggleCoordinatePicker = () => {
   isCoordinatePickerEnabled.value = !isCoordinatePickerEnabled.value;
-  console.log(`🗺️ 坐标拾取模式: ${isCoordinatePickerEnabled.value ? '开启' : '关闭'}`);
+  console.log(`🗺️ 坐标拾取模式：${isCoordinatePickerEnabled.value ? '开启' : '关闭'}`);
   
   if (isCoordinatePickerEnabled.value) {
-    console.log('💡 提示: 点击地图任意位置获取坐标');
+    console.log('💡 提示：点击地图任意位置获取坐标');
   }
 };
 
@@ -141,7 +141,7 @@ const addExistingMarkers = (AMap) => {
 const addMarkerToMap = (AMap, markerData) => {
   const { location, coordinates, color, isActive } = markerData;
   
-  console.log(`添加标记: ${location.name}, 激活状态: ${isActive}`);
+  console.log(`添加标记：${location.name}, 激活状态：${isActive}`);
   
   // 创建标记内容
   const markerContent = `
@@ -212,7 +212,7 @@ const addMarkerToMap = (AMap, markerData) => {
   marker.on('click', (e) => {
     // 阻止事件冒泡，避免触发地图点击事件
     e.stopPropagation();
-    console.log(`点击标记: ${location.name}`);
+    console.log(`点击标记：${location.name}`);
     mapStore.selectLocation(location);
   });
 
@@ -222,7 +222,7 @@ const addMarkerToMap = (AMap, markerData) => {
   // 存储标记引用
   markers.value.set(markerData.id, marker);
   
-  console.log('标记已添加到地图:', location.name, '激活状态:', isActive);
+  console.log('标记已添加到地图：', location.name, '激活状态：', isActive);
 };
 
 // 获取地点类型对应的图标
@@ -254,7 +254,7 @@ const removeMarker = (markerId) => {
   }
 };
 
-// 全局函数，供HTML中的onclick调用
+// 全局函数，供 HTML 中的 onclick 调用
 if (typeof window !== 'undefined') {
   window.removeMarker = removeMarker;
 }
@@ -266,7 +266,7 @@ watch(
     if (newLocation && newLocation.coordinates && map.value) {
       // 移动地图中心到新选中的地点
       map.value.setCenter([newLocation.coordinates.longitude, newLocation.coordinates.latitude]);
-      console.log('地图中心移动到:', newLocation.name);
+      console.log('地图中心移动到：', newLocation.name);
     }
   },
   { deep: true }
@@ -297,7 +297,7 @@ const updateAllMarkers = async () => {
   });
   markers.value.clear();
   
-  // 等待DOM更新
+  // 等待 DOM 更新
   await nextTick();
   
   // 获取 AMap 构造函数
