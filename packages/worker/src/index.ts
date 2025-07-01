@@ -31,7 +31,7 @@ app.get('/api/test-db', async (c) => {
       }
     })
   } catch (error) {
-    console.error('数据库连接错误:', error)
+    console.error('数据库连接错误：', error)
     
     return c.json({
       success: false,
@@ -60,7 +60,7 @@ app.post('/api/init-test-table', async (c) => {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('创建表错误:', error)
+    console.error('创建表错误：', error)
     
     return c.json({
       success: false,
@@ -91,7 +91,7 @@ app.post('/api/test-insert', async (c) => {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('插入数据错误:', error)
+    console.error('插入数据错误：', error)
     
     return c.json({
       success: false,
@@ -117,7 +117,7 @@ app.get('/api/test-select', async (c) => {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('查询数据错误:', error)
+    console.error('查询数据错误：', error)
     
     return c.json({
       success: false,

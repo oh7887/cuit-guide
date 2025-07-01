@@ -15,10 +15,10 @@ import {
 } from './ui/drawer';
 
 /**
- * 主布局组件 - 使用shadcn组件实现三栏布局
+ * 主布局组件 - 使用 shadcn 组件实现三栏布局
  * 左侧：可折叠的二级菜单（聊天记录 + 智能体市场，各自可独立折叠）
  * 中间：聊天页面
- * 右侧：MCP设置按钮（使用shadcn Drawer组件）
+ * 右侧：MCP 设置按钮（使用 shadcn Drawer 组件）
  */
 export const Layout: React.FC = () => {
   // 左侧面板整体展开/折叠状态
@@ -83,13 +83,13 @@ export const Layout: React.FC = () => {
                 <Card className="cursor-pointer hover:bg-gray-50 transition-colors">
                   <CardContent className="p-3">
                     <p className="font-medium text-sm">Claude Sonnet 4</p>
-                    <p className="text-xs text-gray-500">强大的通用AI助手</p>
+                    <p className="text-xs text-gray-500">强大的通用 AI 助手</p>
                   </CardContent>
                 </Card>
                 <Card className="cursor-pointer hover:bg-gray-50 transition-colors">
                   <CardContent className="p-3">
                     <p className="font-medium text-sm">GPT-4</p>
-                    <p className="text-xs text-gray-500">OpenAI的先进语言模型</p>
+                    <p className="text-xs text-gray-500">OpenAI 的先进语言模型</p>
                   </CardContent>
                 </Card>
                 <Card className="cursor-pointer hover:bg-gray-50 transition-colors">

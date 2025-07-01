@@ -145,7 +145,7 @@ interface ChatStore {
   addToolCallingMessage: (toolCall: ToolCallMessage) => void;
 }
 
-Enhanced MCP Store（增强的MCP状态）
+Enhanced MCP Store（增强的 MCP 状态）
 ts
 Apply
 interface EnhancedMCPStore extends MCPStore {

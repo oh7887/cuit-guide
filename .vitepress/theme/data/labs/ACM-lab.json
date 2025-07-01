@@ -1,7 +1,7 @@
 {
   "name": "ACM 算法实验室",
   "shortName": "ACM",
-  "technologyStack": ["C++"，"Java", "Python", "C", "C#"],
+  "technologyStack": ["C++", "Java", "Python", "C", "C#"],
   "college": "软件工程学院",
   "location": "双中心 B 座 504 与 511",
   "QQ": "758762821",
