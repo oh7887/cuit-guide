@@ -110,6 +110,7 @@ const navigateToUrl = () => {
     border: 1px solid var(--card-border);
     border-radius: inherit;
     box-shadow: var(--card-shadow);
+    margin: 0;
 }
 
 .friend-card:hover {
@@ -150,8 +151,10 @@ const navigateToUrl = () => {
     margin-bottom: 8px;
 }
 
+/* TODO */
 .friend-tags {
     display: flex;
+    align-items: start;
     gap: 8px;
     flex-wrap: wrap;
     margin-bottom: 12px;
@@ -188,10 +191,10 @@ const navigateToUrl = () => {
 }
 
 /* 响应式设置 */
-
-@media ((max-width: 1024px)) {
-    .card-content {
-        width: auto;
+@media ((max-width: 1450px)) {
+    .friend-card {
+        max-width: 500px;
+        width: 100%;
     }
 }
 
@@ -206,6 +209,15 @@ const navigateToUrl = () => {
         width: 100px;
         height: 100px;
         margin: 12px;
+    }
+
+    .friend-tags {
+        min-height: 75px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
     }
 
     .bg-image {

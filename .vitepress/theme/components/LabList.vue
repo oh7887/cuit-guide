@@ -14,6 +14,7 @@
               name: '',
               shortName: '',
               technologyStack: [],
+              introduction: '',
               college: '',
               location: '',
               QQ: '',
@@ -97,6 +98,19 @@
                   </div>
                 </div>
 
+                <div class="info-item introduction-item">
+                  <div class="info-icon introduction-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4285f4">
+                      <path
+                        d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z" />
+                    </svg>
+                  </div>
+                  <div class="info-text">
+                    <div class="info-label">实验室简介</div>
+                    <a :href="lab.introduction" target="_blank" class="info-value">点击前往</a>
+                  </div>
+                </div>
+
                 <div class="info-item qq-item">
                   <div class="info-icon qq-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -127,7 +141,7 @@
                   </div>
                   <div class="info-text">
                     <div class="info-label">官方网站</div>
-                    <a :href="lab.link" target="_blank" class="info-value">Click Me</a>
+                    <a :href="lab.link" target="_blank" class="info-value">点击前往</a>
                   </div>
                 </div>
               </div>
@@ -294,7 +308,6 @@ onMounted(loadLabs);
   position: relative;
   width: 100%;
   height: 380px;
-  cursor: pointer;
   perspective: 1000px;
 }
 
@@ -586,9 +599,14 @@ onMounted(loadLabs);
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
 }
 
+.introduction-icon {
+  background: linear-gradient(135deg, #fb4a97, #f5c0b4);
+}
+
 
 /* 链接文字样式 */
-.info-value a {
+a.info-value {
+  font-weight: 600;
   color: var(--vp-c-brand);
   text-decoration: none;
   word-break: break-all;

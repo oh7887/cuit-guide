@@ -1,7 +1,7 @@
 <template>
     <h2 id="main-title">CUIT 校友友链</h2>
     <span
-        style="display: flex;justify-content: center;font-size: 1rem; color: #666; margin-top: 20px; font-weight: 600;">
+        style="display: flex;justify-content: center;font-size: 1rem; color: #666; margin-top: 40px; font-weight: 600; margin-left: 20px; margin-right: 20px;">
         如需加入，请自行提交pr/联系Epoch开发实验室~
         <span style="
             font-size: 1rem;
@@ -21,34 +21,38 @@
             (点击获取格式)
         </span>
     </span>
-    <!-- 选择器部分 -->
-    <div id="selector-container">
-        <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="graduationYears" placeholder="选择毕业年份" />
-        <SelectedUi v-show="isSelectorShow" v-model="selectedMajor" :options="majors" placeholder="选择专业" />
-        <SelectedUi v-show="isSelectorShow" v-model="selectedTechnicalDirection" :options="technicalDirections"
-            placeholder="选择技术方向" />
-        <div id="selector-btn" @click="toggleSelector" :class="{ 'active': isSelectorShow }" aria-label="筛选控制按钮">
-            <svg class="selector-icon" viewBox="0 0 1024 1024">
-                <path :d="isSelectorShow ? closePath : filterPath" fill="currentColor" />
-            </svg>
+    <LoadingComponent v-model="isLoading" @retry="loadFriends"></LoadingComponent>
+    <div id="friends-list" v-if="!isLoading">
+        <!-- 选择器部分 -->
+        <div id="selector-container">
+            <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="graduationYears"
+                placeholder="选择毕业年份" />
+            <SelectedUi v-show="isSelectorShow" v-model="selectedMajor" :options="majors" placeholder="选择专业" />
+            <SelectedUi v-show="isSelectorShow" v-model="selectedTechnicalDirection" :options="technicalDirections"
+                placeholder="选择技术方向" />
+            <div id="selector-btn" @click="toggleSelector" :class="{ 'active': isSelectorShow }" aria-label="筛选控制按钮">
+                <svg class="selector-icon" viewBox="0 0 1024 1024">
+                    <path :d="isSelectorShow ? closePath : filterPath" fill="currentColor" />
+                </svg>
+            </div>
         </div>
+
+        <!-- 筛选逻辑部分 -->
+        <template v-for="time in graduationYears" :key="time.value">
+            <TimeLine :colors="['#ff6b6b', '#4ecdc4']" size="large" class="time-line"
+                v-if="filteredFriends.filter(friend => friend.graduationYear === time.value).length > 0">
+                {{ time.value }}
+            </TimeLine>
+            <div id="blog-container"
+                v-if="filteredFriends.filter(friend => friend.graduationYear === time.value).length > 0">
+                <FriendCard v-for="friend in filteredFriends.filter(friend => friend.graduationYear === time.value)"
+                    :friend="friend" :key="friend.name" />
+            </div>
+        </template>
+
+        <EmptyState v-if="filteredFriends.length === 0" title="没有找到符合条件的校友" description="请尝试调整筛选条件">
+        </EmptyState>
     </div>
-
-    <!-- 筛选逻辑部分 -->
-    <template v-for="time in graduationYears" :key="time.value">
-        <TimeLine :colors="['#ff6b6b', '#4ecdc4']" size="large" class="time-line"
-            v-if="filteredFriends.filter(friend => friend.graduationYear === time.value).length > 0">
-            {{ time.value }}
-        </TimeLine>
-        <div id="blog-container"
-            v-if="filteredFriends.filter(friend => friend.graduationYear === time.value).length > 0">
-            <FriendCard v-for="friend in filteredFriends.filter(friend => friend.graduationYear === time.value)"
-                :friend="friend" :key="friend.name" />
-        </div>
-    </template>
-
-    <EmptyState v-if="filteredFriends.length === 0" title="没有找到符合条件的校友" description="请尝试调整筛选条件">
-    </EmptyState>
 
     <!-- 自定义Toast提示 -->
     <Transition name="toast">
@@ -64,6 +68,7 @@
 </template>
 
 <script setup lang="ts">
+import LoadingComponent from "./ui/LoadingComponent.vue";
 import EmptyState from "./ui/EmptyState.vue";
 import SelectedUi from "./ui/SelectedUi.vue";
 import TimeLine from "./ui/TimeLine.vue";
@@ -94,6 +99,9 @@ interface technicalDirectionOption {
     value: string,
     label: string
 }
+
+// 加载中状态
+const isLoading = ref(true);
 
 // 图标路径
 const filterPath = "M608.24 960c-17.72 0-32-14.28-32-32V448.1c0-7.91 2.92-15.65 8.26-21.5l208.82-234.46L230.5 192.14 439.67 426.77c5.16 5.85 8.08 13.42 8.08 21.33v288.81l50.92 41.11c13.76 11.18 15.82 31.31 4.82 45.07-11.01 13.76-31.31 15.82-45.07 4.82l-51.76-42.05V460.14L135.2 181.3c-8.43-9.46-10.49-22.88-5.33-34.4 5.16-11.53 16.69-18.92 29.24-18.92h706.29c12.73 0 24.08 7.4 29.24 19.1 5.16 11.52 2.92 25.11-5.5 34.4L640.24 460.31v467.7c0 17.72-14.28 32-32 32z"
@@ -166,6 +174,8 @@ const loadFriends = async () => {
         filteredFriends.value = friends.value;
     } catch (error) {
         console.error("加载资源失败", error);
+    } finally {
+        isLoading.value = false;
     }
 }
 
