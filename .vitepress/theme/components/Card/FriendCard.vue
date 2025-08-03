@@ -34,7 +34,7 @@ const props = defineProps({
     friend: {
         type: Object,
         required: true,
-        validator: (val) => ['name', 'link', 'avatar', 'description', "graduationYear", "major", "technicalDirection"].every(key => key in val)
+        validator: (val: any) => ['name', 'link', 'avatar', 'description', "graduationYear", "major", "technicalDirection"].every(key => key in val)
     },
 })
 
@@ -103,7 +103,7 @@ const navigateToUrl = () => {
     z-index: 1;
     background: var(--card-bg);
     backdrop-filter: saturate(180%) blur(4px);
-    width: 570px;
+    width: 520px;
     height: 100%;
     display: flex;
     padding: 16px;

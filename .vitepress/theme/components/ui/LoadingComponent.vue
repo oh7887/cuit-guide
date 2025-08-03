@@ -1,8 +1,8 @@
 <template>
-    <div class="loading-overlay" v-show="loadingState">
+    <div class="loading-overlay" v-show="loadingState" :style="{ backgroundColor: backgroundColor }">
         <div class="loading-container">
             <div v-if="!isTimeout" class="spinner" :style="{ backgroundColor: spinnerColor }">
-                <img src="../../../../实验室/计算机学院/回声开发实验室/logo.png" alt="">
+                <img src="../../../../实验室/计算机学院/回声开发实验室/logo.png" alt="加载中">
             </div>
             <div v-else class="timeout-icon">
                 🥲
@@ -10,9 +10,14 @@
             <p class="loading-text" :style="{ color: textColor }">
                 {{ isTimeout ? timeoutText : text }}
             </p>
-            <button v-if="isTimeout" @click="resetLoading" class="retry-button">
-                {{ retryText }}
-            </button>
+            <div v-if="isTimeout" class="button-group">
+                <button @click="resetLoading" class="retry-button">
+                    {{ retryText }}
+                </button>
+                <button @click="handleCancel" class="cancel-button">
+                    {{ cancelText }}
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -27,7 +32,8 @@ const props = defineProps({
     backgroundColor: { type: String, default: 'rgba(255, 255, 255, 0.8)' },
     timeout: { type: Number, default: 5000 }, // 超时时间，默认5000ms
     timeoutText: { type: String, default: '加载超时，请重试' }, // 超时提示文字
-    retryText: { type: String, default: '重试' } // 重试按钮文字
+    retryText: { type: String, default: '重试' }, // 重试按钮文字
+    cancelText: { type: String, default: '取消' } // 取消按钮文字
 })
 
 // 双向绑定
@@ -48,11 +54,18 @@ const startTimeoutTimer = () => {
     }, props.timeout)
 }
 
-// 重置加载状态
+// 重置加载状态（重试）
 const resetLoading = () => {
     isTimeout.value = false
     modelValue.value = false
     emit('retry')
+}
+
+// 处理取消操作
+const handleCancel = () => {
+    isTimeout.value = false
+    modelValue.value = false
+    emit('cancel')
 }
 
 // 监听加载状态变化
@@ -85,6 +98,7 @@ onUnmounted(() => {
 const emit = defineEmits<{
     (e: 'timeout'): void
     (e: 'retry'): void
+    (e: 'cancel'): void
 }>()
 </script>
 
@@ -126,6 +140,12 @@ const emit = defineEmits<{
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 16px;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
 }
 
 .retry-button {
@@ -139,6 +159,19 @@ const emit = defineEmits<{
 
 .retry-button:hover {
     background-color: #2572eb;
+}
+
+.cancel-button {
+    padding: 4px 16px;
+    background-color: #f3f4f6;
+    color: #374151;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    background-color: #e5e7eb;
 }
 
 @keyframes spin {

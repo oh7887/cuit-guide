@@ -93,7 +93,7 @@ export default defineConfig({
       sortMenusByFrontmatterOrder: true, // 启用按frontmatter中的order字段排序
       frontmatterOrderDefaultValue: 100, // 设置默认值，未指定order的项目将排在后面
       useTitleFromFrontmatter: true, // 启用从frontmatter获取标题
-      frontmatterTitleFieldName: 'title', // 指定frontmatter中标题字段的名称
+      frontmatterTitleFieldName: "title", // 指定frontmatter中标题字段的名称
       // documentRootPath: '/src',
       // scanStartPath: null,
       // basePath: null,

@@ -1,15 +1,7 @@
 <template>
-  <WelcomeModal 
-    ref="modalRef"
-    :image-url="modalConfig.imageUrl"
-    :title="modalConfig.title"
-    :description="modalConfig.description"
-    :partycode="modalConfig.partycode"
-    :confirm-text="modalConfig.confirmText"
-    :cancel-text="modalConfig.cancelText"
-    @close="handleModalClose"
-    @confirm="handleModalConfirm"
-  />
+  <WelcomeModal ref="modalRef" :image-url="modalConfig.imageUrl" :title="modalConfig.title"
+    :description="modalConfig.description" :partycode="modalConfig.partycode" :confirm-text="modalConfig.confirmText"
+    :cancel-text="modalConfig.cancelText" @close="handleModalClose" @confirm="handleModalConfirm" />
 </template>
 
 <script setup lang="ts">
@@ -79,14 +71,14 @@ let wasOnHomePage = false
 const handleRouteChange = () => {
   const currentPath = router.route.path
   const isCurrentlyHome = isHomePage(currentPath)
-  
+
   // 如果从主页离开到其他页面，且未显示过弹窗
   if (wasOnHomePage && !isCurrentlyHome && !hasShownModal()) {
     setTimeout(() => {
       modalRef.value?.openModal()
     }, 500) // 延迟500ms显示，确保页面切换完成
   }
-  
+
   wasOnHomePage = isCurrentlyHome
 }
 
@@ -104,7 +96,7 @@ const handleModalConfirm = () => {
 onMounted(() => {
   // 初始化当前页面状态
   wasOnHomePage = isHomePage(router.route.path)
-  
+
   // 监听路由变化
   router.onAfterRouteChanged = handleRouteChange
 })

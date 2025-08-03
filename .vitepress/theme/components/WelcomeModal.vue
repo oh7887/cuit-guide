@@ -4,16 +4,16 @@
       <div class="modal-content" @click.stop>
         <button class="modal-close" @click="closeModal" aria-label="关闭弹窗">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
         </button>
-        
+
         <div class="modal-body">
           <!-- 图片部分 -->
           <div class="modal-image">
             <img :src="imageUrl" :alt="imageAlt" />
           </div>
-          
+
           <!-- 文字内容 -->
           <div class="modal-text">
             <h2 class="modal-title">{{ title }}</h2>
@@ -54,7 +54,7 @@ const props = withDefaults(defineProps<Props>(), {
   imageAlt: '欢迎图片',
   title: '欢迎来到 CUIT 指南！',
   description: '这里汇集了成都信息工程大学的各种实用信息和资源，希望能为你的校园生活提供帮助。记得收藏本站，随时查看最新内容！',
-  partycode:'',
+  partycode: '',
   confirmText: '好的，知道了',
   cancelText: '下次再说'
 })
@@ -220,13 +220,17 @@ defineExpose({
 .btn-primary {
   background: var(--vp-c-brand);
   color: white;
-  border-color: var(--vp-c-brand);
+  border: 1px solid var(--vp-c-brand);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-color: var(--vp-c-divider);
 }
 
 .btn-primary:hover {
-  background: var(--vp-c-brand-dark);
-  border-color: var(--vp-c-brand-dark);
-  transform: translateY(-1px);
+  background: var(--vp-c-brand, rgba(var(--vp-c-brand), 0.9));
+  border-color: var(--vp-c-divider-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  filter: saturate(1.1);
 }
 
 .btn-secondary {
@@ -238,6 +242,9 @@ defineExpose({
 .btn-secondary:hover {
   background: var(--vp-c-bg-mute);
   border-color: var(--vp-c-divider-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  filter: saturate(1.1);
 }
 
 /* 动画效果 */
@@ -262,28 +269,28 @@ defineExpose({
     margin: 0 16px;
     max-width: none;
   }
-  
+
   .modal-body {
     padding: 24px 20px;
   }
-  
+
   .modal-image img {
     max-width: 160px;
     max-height: 160px;
   }
-  
+
   .modal-title {
     font-size: 20px;
   }
-  
+
   .modal-description {
     font-size: 14px;
   }
-  
+
   .modal-actions {
     flex-direction: column;
   }
-  
+
   .btn-primary,
   .btn-secondary {
     width: 100%;

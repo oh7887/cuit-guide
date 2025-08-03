@@ -21,7 +21,7 @@
             (点击获取格式)
         </span>
     </span>
-    <LoadingComponent v-model="isLoading" @retry="loadFriends"></LoadingComponent>
+    <LoadingComponent v-model="isLoading" @retry="loadFriends" @cancel="isLoading = false"></LoadingComponent>
     <div id="friends-list" v-if="!isLoading">
         <!-- 选择器部分 -->
         <div id="selector-container">
@@ -349,7 +349,7 @@ onMounted(async () => {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
-    width: 80%;
+    width: 95%;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 20px;
